@@ -18,6 +18,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
+        "https://stackflow1218.vercel.app",
         "https://frontend-cuy3.vercel.app"
     ],
     allow_origin_regex=r"https?://.*",

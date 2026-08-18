@@ -12,6 +12,7 @@ class Settings(BaseModel):
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
+        "https://stackflow1218.vercel.app",
         "https://frontend-cuy3.vercel.app",
         "*"
     ]
