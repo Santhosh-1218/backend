@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from typing import List, Dict, Any, Optional
 from datetime import datetime
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from app.database.db import db
 from app.core.security import get_current_user, require_super_admin
 from app.core.firebase_auth import FirebaseAuthService
@@ -11,7 +11,7 @@ router = APIRouter(prefix="/admin/users", tags=["Admin User Management"])
 class CreateUserPayload(BaseModel):
     fullName: Optional[str] = None
     name: Optional[str] = None
-    email: EmailStr
+    email: str
     password: str
     role: str
     department: Optional[str] = "Warehouse Operations"
@@ -24,7 +24,7 @@ class CreateUserPayload(BaseModel):
 class UpdateUserPayload(BaseModel):
     fullName: Optional[str] = None
     name: Optional[str] = None
-    email: Optional[EmailStr] = None
+    email: Optional[str] = None
     role: Optional[str] = None
     department: Optional[str] = None
     status: Optional[str] = None
